@@ -35,40 +35,25 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
     "Não temos a informação do time que está nessa posição."
 */
 function showTeamPosition(position) {
-  switch(position) {
-    case 0:
-    console.log(`O time que está em ${position+1}º lugar é o ${teams[0]}`)
-               break;
-    case 1:
-     console.log(`O time que está em ${position+1}º lugar é o ${teams[1]}`)
-      break;
-      
-    case 2: 
-      console.log(`O time que está em ${position+1}º lugar é o ${teams[2]}`)
-      break;
-      
-    case 3: 
-      console.log(`O time que está em ${position+1}º lugar é o ${teams[3]}`)
-      break;
-      
-    case 4: 
-      console.log(`O time que está em ${position+1}º lugar é o ${teams[4]}`)
-      break;
-      
-  default:
-    console.log("Não temos a informação do time que está nessa posição.");
+  
+  if(position < 1 || position > 5) {
+  return 'Não temos a informação do time que está nessa posição.'
+
+}
+  
+  return `O time que está em ${position}º lugar é o ${teams[position -1]} `
                  
-                 }
+               
 }
 
 /*
 Escolha 4 times do campeonato selecionado e mostre a posição dele, usando a
 função acima. Entre esses 4, adicione 1 que não esteja entre os 5 primeiros.
 */
-showTeamPosition(0) // O time que está em 1º lugar é o Santos
-showTeamPosition(1) // O time que está em 2º lugar é o Corinthias
-showTeamPosition(2) // O time que está em 3º lugar é o Palmeiras
-showTeamPosition(3) // O time que está em 4º lugar é o São Paulo
+showTeamPosition(1) // O time que está em 1º lugar é o Santos
+showTeamPosition(2) // O time que está em 2º lugar é o Corinthias
+showTeamPosition(3) // O time que está em 3º lugar é o Palmeiras
+showTeamPosition(4) // O time que está em 4º lugar é o São Paulo
 showTeamPosition(5) // Não temos a informação do time que está nessa posição.
 
 /*
@@ -94,33 +79,35 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
     "Não temos o equivalente hexadecimal para [COR]."
 */
 function convertToHex(nameColor) {
-  var hexaColor = ['#FF0000', '#0000FF', '#00FF00', '#FFFF00', '#A020F0'] // red, blue, green, yellow, purple
+  var hexaColor;
 switch(nameColor) {
 
   case 'red':
-    console.log(`O hexadecimal para a cor ${nameColor} é ${hexaColor[0]}. `)
+   hexaColor = '#FF0000'
     break;
     
     case 'blue':
-    console.log(`O hexadecimal para a cor ${nameColor} é ${hexaColor[1]}. `)
+     hexaColor = '#0000FF'
     break;
     
     case 'green':
-    console.log(`O hexadecimal para a cor ${nameColor} é ${hexaColor[2]}. `)
+   hexaColor = '#00FF00'
     break;
     
     case 'yellow':
-    console.log(`O hexadecimal para a cor ${nameColor} é ${hexaColor[3]}. `)
+    hexaColor = '#FFFF00'
     break;
     
     case 'purple':
-    console.log(`O hexadecimal para a cor ${nameColor} é ${hexaColor[4]}. `)
+    hexaColor = '#A020F0'
     break;
     
   default:
     console.log(`Não temos o equivalente hexadecimal para ${nameColor}.`)
 
 }
+  
+  return `O hexadecimal para a cor ${nameColor} é ${hexaColor}. 
 
 }
 
