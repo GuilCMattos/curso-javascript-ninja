@@ -51,28 +51,7 @@ Caso contrário, "false".
 */
 
 function isOperatorValid(operator) {
-switch(operator) {
-
-  case '+': 
-    return true
-    break;
-  case '-':
-    return true
-    break;
-  case '*':
-    return true
-    break;
-  case '/':
-    return true
-    break;
-  case '%':
-    return true
-    break;
-    
-  default:
-    return false;
-    
-}
+return operation[operator] !== undefined;
   
 }
 
@@ -90,7 +69,7 @@ os dois parâmetros da função de retorno de "calculator".
 */
 function calculator(operator) {
  
-  if( isOperatorValid(operator) === false) {
+  if( !isOperatorValid(operator)) {
     return false
   }
 
