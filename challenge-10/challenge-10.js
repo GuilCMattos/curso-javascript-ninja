@@ -13,7 +13,7 @@ resolver o problema corretamente.
 var five = Number('5'); // Ou eu mudava o '5' para 5
 console.log( five + ' é número?', typeof five === 'number' );
 
-var concat = String('10 + 10'); // Ou eu mudava o 10 + 10 para '10 + 10' 
+var concat = String(10) + 10; // Ou eu mudava o 10 + 10 para '10 + 10' 
 console.log( '"' + concat + '" é uma string? E é igual a "1010"?', typeof concat === 'string' );
 
 /*
