@@ -56,7 +56,7 @@ console.log(newSul)
 Mostre no console todos os estados que estão em `brasil`.
 */
 console.log( '\nAlguns Estados do Brasil:' );
-// ?
+console.log(brasil)
 
 /*
 Crie um novo array chamado `nordeste`, que tenha os estados do nordeste.
@@ -119,15 +119,12 @@ Senão, mostre no console:
 - "Nem todos os estados tem mais de 7 letras!"
 */
 console.log( '\nTodos os estados de `brasil` tem mais de 7 letras?' );
-brasil.filter(function(item){
+var every = brasil.every(function(item) { // Every sempre retorna true ou false 
 
-  var bigSeven = item.length > 7 
-
-if(bigSeven > 7) {
-return console.log('Sim, todos estados tem mais de 7 letras')
-}
- return console.log('Nem todos os estados tem 7 letras')
+  return item.length > 7;
 })
+
+console.log(every ? 'Sim, todos os estados tem mais de 7 letras!' : 'Nem todos os estados tem mais de 7 letras')
 
 /*
 Percorra o array `brasil` e verifique se o Ceará está incluído, atribuindo o
@@ -137,13 +134,12 @@ console:
 Senão, mostrar a frase:
 - "Ceará não foi incluído :("
 */
-console.log( '\nCeará está incluído em `brasil`?' );
-brasil.filter(function(item){
+var some = brasil.some(function(item){ // some verifica se é true ou false mas se existe 1 ele é true
 
-  var res = item === 'Ceará' 
-  item === 'Ceará' ? console.log('Ceará está incluído') : console.log( 'Ceará não foi incluido :('); 
-
+  return item === 'Ceará'
 })
+
+console.log(some ? 'Ceará está incluído!' : 'Ceará não foi incluído :(')
 
 /*
 Percorra o array `newBrasil` e crie um novo array que some 1 no ID de cada
@@ -151,14 +147,10 @@ objeto desse array, e adicione a frase abaixo na propriedade `estado`:
 - "[ESTADO] pertence ao Brasil."
 Atribua o novo array a uma variável chamada `map`.
 */
-  var map = []
-newBrasil.map(function(item, id){
-
- map.push({id: newBrasil[id].id + 1, estado: `S{newBrasil[id].estado} pertence ao Brasil`})
-         
-  
-})
-
+  var map = newBrasil.map(function(item, index) {
+    
+    return {id: item.id + 1, estado: item.estado + ' pertence ao Brasil.'}
+  })
 /*
 Mostre no console o array criado acima:
 */
@@ -171,7 +163,7 @@ ID par. Atribua o valor à uma variável chamada `filter`.
 */
 var filter = map.filter(function(item, id){
   
-  return map[id] % 2 === 0
+  return item.id % 2 === 0;
   
 })
 
