@@ -1,3 +1,5 @@
+(function(){
+
 /*
 Envolva todo o código desse desafio em uma IIFE.
 Crie um arquivo chamado index.html e adicione esse script ao HTML.
@@ -21,7 +23,18 @@ as seguintes características:
   adicionados à idade original (age). Esse método deverá retornar o objeto
   que será instanciado.
 */
-// ?
+
+  function Person(name, lastName, age) {
+    
+    this.name = name;
+    this.lastName = lastName;
+    this.age = age;
+    this.getFullName = () => { return arguments[0] + ' ' + arguments[1]} 
+    this.getAge = () => {return this.age};
+    this.addAge = function() {    
+    return this.age = age + arguments[0]     
+    }   
+  }
 
 /*
 Crie 3 novos objetos usando o construtor acima. Os objetos serão novas
@@ -30,20 +43,29 @@ parâmetros corretamente para o construtor para criar as novas pessoas.
 Mostre as 3 novas pessoas criadas no console (Um console.log por pessoa).
 */
 console.log( 'Novas pessoas criadas à partir de Person:' );
-// ?
+var guilherme = new Person('Guilherme', 'Mattos', 24)
+var suzir = new Person('Suzir', 'Marilu', 54)
+var alexandre = new Person('Alexandre', 'Oliveira', 55)
+  console.log(guilherme)
+  console.log(suzir)
+  console.log(alexandre)
 
 /*
 Mostre no console o nome completo de cada pessoa.
 */
 console.log( '\nNomes das pessoas:' );
-// ?
+  console.log(guilherme.getFullName())
+  console.log(suzir.getFullName())
+  console.log(alexandre.getFullName())
 
 /*
 Mostre no console as idades de cada pessoa, com a frase:
 - "[NOME COMPLETO] tem [IDADE] anos."
 */
 console.log( '\nIdade das pessoas:' );
-// ?
+ console.log(guilherme.getFullName() + ' tem ' + guilherme.age + ' anos.')
+ console.log(suzir.getFullName() + ' tem ' + suzir.age + ' anos.')
+ console.log(alexandre.getFullName() + ' tem ' + alexandre.age + ' anos.')
 
 /*
 Adicione alguns anos à cada pessoa, e mostre no console a nova idade de
@@ -51,4 +73,11 @@ cada um. A frase deverá ser no formato:
 - "[NOME COMPLETO] agora tem [NOVA IDADE] anos."
 */
 console.log( '\nNova idade das pessoas:' );
-// ?
+guilherme.addAge(4)
+suzir.addAge(4)
+alexandre.addAge(5)
+   console.log(guilherme.getFullName() + ' agora tem ' + guilherme.age + ' anos.')
+ console.log(suzir.getFullName() + ' agora tem ' + suzir.age + ' anos.')
+ console.log(alexandre.getFullName() + ' agora tem ' + alexandre.age + ' anos.')
+  
+  })();
