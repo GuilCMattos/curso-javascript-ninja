@@ -32,7 +32,8 @@ as seguintes características:
     this.getFullName = () => { return arguments[0] + ' ' + arguments[1]} 
     this.getAge = () => {return this.age};
     this.addAge = function() {    
-    return this.age = age + arguments[0]     
+      this.age = age + arguments[0] 
+    return this
     }   
   }
 
