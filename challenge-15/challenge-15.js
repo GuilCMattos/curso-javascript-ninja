@@ -74,11 +74,9 @@ cada um. A frase deverá ser no formato:
 - "[NOME COMPLETO] agora tem [NOVA IDADE] anos."
 */
 console.log( '\nNova idade das pessoas:' );
-guilherme.addAge(4)
-suzir.addAge(4)
-alexandre.addAge(5)
-   console.log(guilherme.getFullName() + ' agora tem ' + guilherme.age + ' anos.')
- console.log(suzir.getFullName() + ' agora tem ' + suzir.age + ' anos.')
- console.log(alexandre.getFullName() + ' agora tem ' + alexandre.age + ' anos.')
+
+   console.log(guilherme.getFullName() + ' agora tem ' + guilherme.addAge(4).getAge() + ' anos.')
+ console.log(suzir.getFullName() + ' agora tem ' + suzir.addAge(4).getAge() + ' anos.')
+ console.log(alexandre.getFullName() + ' agora tem ' + alexandre.addAge(5).getAge() + ' anos.')
   
   })();
